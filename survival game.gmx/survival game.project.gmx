@@ -14,6 +14,11 @@
     <sprite>sprites\spr_wood</sprite>
     <sprite>sprites\spr_block_wood</sprite>
     <sprite>sprites\spr_floor_wood</sprite>
+    <sprite>sprites\spr_grass</sprite>
+    <sprite>sprites\spr_wheet</sprite>
+    <sprite>sprites\sprite8</sprite>
+    <sprite>sprites\spr_equip</sprite>
+    <sprite>sprites\spr_world_end</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -22,12 +27,19 @@
   <objects name="objects">
     <object>objects\obj_player</object>
     <object>objects\obj_tree</object>
+    <object>objects\obj_grass</object>
     <object>objects\obj_Rcontroller</object>
     <object>objects\obj_log</object>
+    <object>objects\obj_straw</object>
     <object>objects\obj_place32</object>
     <object>objects\obj_wood</object>
     <object>objects\obj_woodF</object>
     <object>objects\obj_place</object>
+    <object>objects\obj_gui</object>
+    <object>objects\obj_gui_pause</object>
+    <object>objects\obj_equip</object>
+    <object>objects\obj_end</object>
+    <object>objects\obj_boulder</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline0</timeline>

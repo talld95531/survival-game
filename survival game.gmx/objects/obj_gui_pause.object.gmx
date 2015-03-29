@@ -25,149 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.woodR = 0
-global.stoneR = 0
-global.ironR = 0
-global.strawR = 0
-global.gen = false
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>x = obj_player.x
-y = obj_player.y
+            <string>// button code
 
+width = 96
+height = 28
+hover = false
 
-
-
-
-
-if(global.gen = false)
-{
-if(instance_count&lt;1002)
-{
-xx = random(10000)
-if(xx&lt;10000)
-{
-yy = random(10000)
-if(yy&lt;10000)
-{
-instance_create(xx,yy,obj_tree)
-}
-else
-exit
-}
-else
-exit
-}
-else
-if(instance_count&lt;2002)
-{
-xx = random(10000)
-if(xx&lt;10000)
-{
-yy = random(10000)
-if(yy&lt;10000)
-{
-instance_create(xx,yy,obj_grass)
-}
-else
-exit
-}
-else
-exit
-}
-else
-global.gen = true
-
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>x = obj_player.x
-y = obj_player.y
-
-
-
-
-
-
-if(global.gen = false)
-{
-if(instance_count&lt;1002)
-{
-xx = random(10000)
-if(xx&lt;10000)
-{
-yy = random(10000)
-if(yy&lt;10000)
-{
-instance_create(xx,yy,obj_tree)
-}
-else
-exit
-}
-else
-exit
-}
-else
-if(instance_count&lt;2002)
-{
-xx = random(10000)
-if(xx&lt;10000)
-{
-yy = random(10000)
-if(yy&lt;10000)
-{
-instance_create(xx,yy,obj_grass)
-}
-else
-exit
-}
-else
-exit
-}
-else
-global.gen = true
-
-}
+display_x =xstart*global.display_scale
+display_y =ystart*global.display_scale 
 </string>
           </argument>
         </arguments>
@@ -190,61 +55,15 @@ global.gen = true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = obj_player.x
-y = obj_player.y
-
-
-
-
-
-
-if(global.gen = false)
-{
-if(instance_count&lt;1002)
-{
-xx = random(10000)
-if(xx&lt;10000)
-{
-yy = random(10000)
-if(yy&lt;10000)
-{
-instance_create(xx,yy,obj_tree)
-}
-else
-exit
-}
-else
-exit
-}
-else
-if(instance_count&lt;2002)
-{
-xx = random(10000)
-if(xx&lt;10000)
-{
-yy = random(10000)
-if(yy&lt;10000)
-{
-instance_create(xx,yy,obj_grass)
-}
-else
-exit
-}
-else
-exit
-}
-else
-{
-global.gen = true
-view_visible[2] = false
-}
-}
+            <string>var xhover = (global.gui_mouse_x == median(display_x-width/2, global.gui_mouse_x,display_x+width/2))
+var yhover = (global.gui_mouse_y == median(display_y-height/2, global.gui_mouse_y,display_y+height/2))
+hover = xhover &amp;&amp; yhover;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="6" enumb="54">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -261,11 +80,45 @@ view_visible[2] = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-draw_text(view_xview+96,view_yview+224,"active instances"+string(instance_count))
-draw_text(view_xview+32,view_yview+128,"fps: "+string(fps))
-draw_text(view_xview+64,view_yview+160,"xx"+string(xx))
-draw_text(view_xview+64,view_yview+192,"yy"+string(yy))
+            <string>if(hover)
+show_message("true")
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//draw gui
+if (hover)
+{
+
+}
+else
+{
+
+}
+draw_rectangle(display_x-width/2,display_y-height/2,display_x+width/2,display_y+height/2,false)
+draw_set_alpha(1)
+draw_set_halign(fa_center)
+draw_set_valign(fa_middle)
+
+draw_text_colour(display_x,display_y,"pause",c_white,c_white,c_white,c_white,1)
 </string>
           </argument>
         </arguments>
